@@ -1,3 +1,5 @@
+const {ipcRenderer} = require('electron')
+
 function validateForm()
  {
   /** var x = document.forms["myForm"]["inputEmail"].value;
@@ -12,4 +14,14 @@ function validateForm()
         return false;
     }
 }
+
+{
+	ipcRenderer.send('btn-submit', document.getElementById('inputEmail').value +
+		document.getElementById('inputPassword').value)
+}
+
+
+
+
+
 
